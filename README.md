@@ -1,2 +1,2 @@
-# vgs_besok
+# Vgs besøk
 Oppgaver for vgs besøk
