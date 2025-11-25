@@ -2,7 +2,7 @@
 // SKATTEKALKULATOR
 // ==========================================
 
-// Avansert skatteberegning med feil
+// Avansert skatteberegning
 const beregnSkattKnapp = document.getElementById('beregnSkattKnapp');
 const nullstillKnapp = document.getElementById('nullstillKnapp');
 
@@ -13,13 +13,12 @@ if (beregnSkattKnapp) {
     const skatteKlasse = document.getElementById('skatteKlasse').value;
     const medlemKirken = document.getElementById('medlemKirken').checked;
 
-    // FEIL 1: Mangler validering av input
 
     let skattesats = 0.22;
     let trinnskatt = 0;
     let minstefradrag = 0;
 
-    // Beregn minstefradrag (FEIL 2: Feil formel - skal være minimum, ikke alltid 100000)
+    // Beregn minstefradrag
     minstefradrag = 100000;
 
     // Beregn trinnskatt
@@ -40,7 +39,7 @@ if (beregnSkattKnapp) {
     const skattegrunnlag = inntekt - minstefradrag;
     let kommuneskatt = skattegrunnlag * skattesats;
 
-    // Kirkeskatt (FEIL 3: Glemmer å legge til kirkeskatt i totalberegning)
+    // Kirkeskatt
     let kirkeskatt = 0;
     if (medlemKirken) {
       kirkeskatt = skattegrunnlag * 0.01;
@@ -70,8 +69,6 @@ if (beregnSkattKnapp) {
   });
 }
 
-// FEIL 4: Mangler implementasjon av nullstill-knappen
-// (Studenter må finne ut at denne funksjonen ikke er koblet til)
 
 // ==========================================
 // KLOKKE I HEADER
@@ -109,7 +106,6 @@ function tegnGraf() {
   // Tøm canvas
   ctx.clearRect(0, 0, bredde, hoyde);
 
-  // FEIL 5: Feil i grafberegning - bruker feil divisor
   const maxVerdi = Math.max(...statistikkData.verdier);
   const stegBredde = bredde / statistikkData.verdier.length;
 
@@ -130,7 +126,6 @@ function tegnGraf() {
   });
 }
 
-// FEIL 6: Feil element-id - skal være 'oppdaterStatistikk' ikke 'oppdaterStat'
 const oppdaterStatKnapp = document.getElementById('oppdaterStat');
 if (oppdaterStatKnapp) {
   oppdaterStatKnapp.addEventListener('click', function() {
@@ -176,7 +171,6 @@ function filtrerRegler() {
     }
   });
 
-  // FEIL 7: Prøver å oppdatere et element som ikke eksisterer
   const sokResultat = document.getElementById('sokResultat');
   if (sokResultat) {
     sokResultat.innerText = `Fant ${funnet} regel(er)`;
@@ -274,7 +268,6 @@ stjerner.forEach(stjerne => {
     valgtRating = parseInt(this.getAttribute('data-verdi'));
     oppdaterStjerner(valgtRating);
 
-    // FEIL 8: Feil variabelnavn - skal være 'ratingTekst' ikke 'ratingText'
     const ratingText = document.getElementById('ratingText');
     if (ratingText) {
       const meldinger = [
@@ -364,7 +357,6 @@ window.addEventListener('load', function() {
 // BESØKSTELLER
 // ==========================================
 
-// FEIL 9: Logisk feil - teller ikke korrekt opp
 let besoksTeller = localStorage.getItem('besoksTeller') || 0;
 besoksTeller = parseInt(besoksTeller);
 besoksTeller = besoksTeller + 1;
@@ -410,7 +402,6 @@ if (fradragSkjema) {
     const belop = parseFloat(document.getElementById('fradragBelop').value);
     const beskrivelse = document.getElementById('fradragBeskrivelse').value;
 
-    // FEIL 10: Manglende validering av felt
 
     const statusElement = document.getElementById('fradragStatus');
     if (statusElement) {
@@ -436,7 +427,6 @@ if (beregnPrisKnapp) {
     const antallTimer = parseFloat(document.getElementById('antallTimer').value);
     const hasteTjeneste = document.getElementById('hasteTjeneste').checked;
 
-    // FEIL 11: Feil i prisberegning - multipliserer med timer to ganger
     let totalPris = tjenestePris * antallTimer * antallTimer;
 
     if (hasteTjeneste) {
@@ -476,7 +466,6 @@ if (timeSkjema) {
     const valgtDato = new Date(dato);
     const idag = new Date();
 
-    // FEIL 12: Feil element-id - skal være 'timeStatus' ikke 'timeStatusMelding'
     const statusElement = document.getElementById('timeStatusMelding');
 
     if (valgtDato < idag) {
@@ -518,7 +507,6 @@ lastNedKnapper.forEach(knapp => {
     // Simuler nedlasting
     alert(`Laster ned dokument: ${dokument}.pdf`);
 
-    // FEIL 13: Prøver å oppdatere nedlastingsteller som ikke eksisterer
     const nedlastingsTeller = document.getElementById('nedlastingsTeller');
     if (nedlastingsTeller) {
       let antall = parseInt(nedlastingsTeller.innerText) || 0;
@@ -541,7 +529,6 @@ if (kontaktMelding && tegnTeller) {
     const antallTegn = this.value.length;
     const maksAntall = 500;
 
-    // FEIL 14: Feil oppdatering av tegnteller - bruker feil variabel
     tegnTeller.innerText = `${antallTegn}/${maksAntall} tegn`;
 
     if (antallTegn > maksAntall) {
@@ -571,8 +558,7 @@ if (kontaktskjema) {
       return;
     }
 
-    // FEIL 15: Feil e-postvalidering - regex er feil
-    const epostRegex = /^[^\s@]+@[^\s@]+$/; // Mangler .com/.no delen
+    const epostRegex = /^[^\s@]+@[^\s@]+$/;
     if (!epostRegex.test(epost)) {
       alert('Ugyldig e-postadresse');
       return;
@@ -625,7 +611,6 @@ function filtrerFAQ() {
 
   detaljer.forEach(d => {
     const tekst = d.innerText.toLowerCase();
-    // FEIL 16: Søkelogikk fungerer ikke som forventet - viser feil når søk er tomt
     if (sokTerm === '' || tekst.includes(sokTerm)) {
       d.style.display = 'block';
       funnetAntall++;
@@ -670,7 +655,6 @@ kategoriKnapper.forEach(knapp => {
     faqGrupper.forEach(gruppe => {
       const gruppeKategori = gruppe.getAttribute('data-kategori');
 
-      // FEIL 17: Logisk feil - viser ikke grupper korrekt
       if (valgtKategori === 'alle' || gruppeKategori === valgtKategori) {
         gruppe.style.display = 'block';
       } else {

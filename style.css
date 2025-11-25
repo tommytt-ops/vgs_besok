@@ -345,6 +345,16 @@ section {
     color: #000;
 }
 
+@keyframes regnbueAnimasjon {
+    0% { background: #ff0000; }
+    16% { background: #ff7f00; }
+    33% { background: #ffff00; }
+    50% { background: #00ff00; }
+    66% { background: #0000ff; }
+    83% { background: #4b0082; }
+    100% { background: #9400d3; }
+}
+
 .viktig-info-knapp {
     position: fixed;
     bottom: 30px;
@@ -359,6 +369,7 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 999;
     transition: all 0.3s ease;
+    animation: regnbueAnimasjon 6s infinite;
 }
 
 .viktig-info-knapp:hover {
