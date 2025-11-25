@@ -11,7 +11,7 @@ Du er ansatt som junior utvikler hos Skatteetaten, og din jobb er å finne og fi
 ## 📁 Filstruktur
 
 ```
-skatteetaten_mega_site/
+vgs_besoek
 ├── index.html          # Hovedside med skattekalkulator og statistikk
 ├── services.html       # Tjenesteside med skjemaer og prisberegner
 ├── contact.html        # Kontaktside med kontaktskjema
