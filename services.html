@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Tjenester - Skatteetaten</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<header>
+  <h1>Våre Tjenester</h1>
+  <nav>
+    <a href='index.html'>Hjem</a>
+    <a href='services.html'>Tjenester</a>
+    <a href='contact.html'>Kontakt</a>
+    <a href='faq.html'>FAQ</a>
+  </nav>
+  <div id='klokke' class='header-clock'></div>
+</header>
+<main>
+  <section class='tjeneste-oversikt'>
+    <h2>Velg tjeneste</h2>
+    <select id='tjenesteVelger'>
+      <option value=''>-- Velg en tjeneste --</option>
+      <option value='skattemelding'>Skattemelding</option>
+      <option value='veiledning'>Personlig veiledning</option>
+      <option value='bedrift'>Bedriftstjenester</option>
+      <option value='revisjon'>Selvangivelse revisjon</option>
+      <option value='klage'>Klage på vedtak</option>
+    </select>
+    <div id='tjenesteInfo' class='tjeneste-info-boks'></div>
+  </section>
+
+  <section class='fradrag-seksjon'>
+    <h2>Søk om fradrag</h2>
+    <form id='fradragSkjema' class='fradrag-form'>
+      <label for='fradragType'>Type fradrag:</label>
+      <select id='fradragType' name='type' required>
+        <option value=''>Velg type</option>
+        <option value='reise'>Reiseutgifter</option>
+        <option value='hjemmekontor'>Hjemmekontor</option>
+        <option value='fagforening'>Fagforeningskontingent</option>
+        <option value='gave'>Gave til frivillige organisasjoner</option>
+      </select>
+
+      <label for='fradragBelop'>Beløp (NOK):</label>
+      <input type='number' id='fradragBelop' name='amount' required min='0'>
+
+      <label for='fradragBeskrivelse'>Beskrivelse:</label>
+      <textarea id='fradragBeskrivelse' name='beskrivelse' rows='4'></textarea>
+
+      <button type='submit' class='beregn-knapp'>Send søknad</button>
+    </form>
+    <p id='fradragStatus' class='status-melding'></p>
+  </section>
+
+  <section class='prisberegner-seksjon'>
+    <h2>Prisberegner for tjenester</h2>
+    <div class='prisberegner-form'>
+      <label for='tjenestePris'>Velg tjeneste:</label>
+      <select id='tjenestePris'>
+        <option value='500'>Grunnleggende veiledning - 500 kr</option>
+        <option value='1500'>Utvidet veiledning - 1500 kr</option>
+        <option value='3000'>Fullstendig revidering - 3000 kr</option>
+        <option value='5000'>Bedriftsrådgivning - 5000 kr</option>
+      </select>
+
+      <label for='antallTimer'>Antall timer:</label>
+      <input type='number' id='antallTimer' value='1' min='1' max='10'>
+
+      <label>
+        <input type='checkbox' id='hasteTjeneste'>
+        Hastebehandling (+50%)
+      </label>
+
+      <button id='beregnPrisKnapp' class='beregn-knapp'>Beregn pris</button>
+      <div id='prisResultat' class='resultat-boks'></div>
+    </div>
+  </section>
+
+  <section class='timebestilling-seksjon'>
+    <h2>Bestill time</h2>
+    <form id='timeSkjema' class='time-form'>
+      <label for='timeNavn'>Fullt navn:</label>
+      <input type='text' id='timeNavn' required>
+
+      <label for='timeEmail'>E-post:</label>
+      <input type='email' id='timeEmail' required>
+
+      <label for='timeTelefon'>Telefon:</label>
+      <input type='tel' id='timeTelefon' required>
+
+      <label for='timeDato'>Ønsket dato:</label>
+      <input type='date' id='timeDato' required>
+
+      <label for='timeTid'>Ønsket tid:</label>
+      <select id='timeTid' required>
+        <option value=''>Velg tid</option>
+        <option value='09:00'>09:00</option>
+        <option value='10:00'>10:00</option>
+        <option value='11:00'>11:00</option>
+        <option value='13:00'>13:00</option>
+        <option value='14:00'>14:00</option>
+        <option value='15:00'>15:00</option>
+      </select>
+
+      <label for='timeFormaal'>Formål med timen:</label>
+      <textarea id='timeFormaal' rows='3'></textarea>
+
+      <button type='submit' class='beregn-knapp'>Bestill time</button>
+    </form>
+    <p id='timeStatus' class='status-melding'></p>
+  </section>
+
+  <section class='dokumenter-seksjon'>
+    <h2>Nyttige dokumenter</h2>
+    <div class='dokument-liste'>
+      <div class='dokument-kort'>
+        <h3>📄 Skattemelding 2024</h3>
+        <p>Mal for utfylling av skattemelding</p>
+        <button class='last-ned-knapp' data-dokument='skattemelding'>Last ned</button>
+      </div>
+      <div class='dokument-kort'>
+        <h3>📄 Fradragsoversikt</h3>
+        <p>Oversikt over vanlige fradrag</p>
+        <button class='last-ned-knapp' data-dokument='fradrag'>Last ned</button>
+      </div>
+      <div class='dokument-kort'>
+        <h3>📄 Klageskjema</h3>
+        <p>Skjema for klage på vedtak</p>
+        <button class='last-ned-knapp' data-dokument='klage'>Last ned</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 Skatteetaten - Alle rettigheter reservert</p>
+</footer>
+<script src='script.js'></script>
+</body>
+</html>

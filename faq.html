@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>FAQ - Ofte stilte spørsmål - Skatteetaten</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<header>
+  <h1>Ofte stilte spørsmål</h1>
+  <nav>
+    <a href='index.html'>Hjem</a>
+    <a href='services.html'>Tjenester</a>
+    <a href='contact.html'>Kontakt</a>
+    <a href='faq.html'>FAQ</a>
+  </nav>
+  <div id='klokke' class='header-clock'></div>
+</header>
+<main>
+  <section class='faq-sok-seksjon'>
+    <h2>Søk i FAQ</h2>
+    <div class='sok-wrapper'>
+      <input type='text' id='faqSok' placeholder='Søk etter spørsmål eller emne...'>
+      <button id='faqSokKnapp' class='beregn-knapp'>Søk</button>
+    </div>
+    <p id='faqSokResultat'></p>
+  </section>
+
+  <section class='faq-kategorier'>
+    <h3>Kategorier:</h3>
+    <div class='kategori-knapper'>
+      <button class='kategori-knapp aktiv' data-kategori='alle'>Alle</button>
+      <button class='kategori-knapp' data-kategori='skattemelding'>Skattemelding</button>
+      <button class='kategori-knapp' data-kategori='fradrag'>Fradrag</button>
+      <button class='kategori-knapp' data-kategori='frister'>Frister</button>
+      <button class='kategori-knapp' data-kategori='teknisk'>Teknisk</button>
+    </div>
+  </section>
+
+  <section class='faq-liste'>
+    <div class='faq-gruppe' data-kategori='skattemelding'>
+      <h3>📝 Skattemelding</h3>
+      <details>
+        <summary>Hvordan beregner jeg skatt?</summary>
+        <p>Du kan bruke vår avanserte skattekalkulator på forsiden. Fyll inn din årsinntekt, alder og skatteklasse for å få et estimat.</p>
+      </details>
+      <details>
+        <summary>Når må jeg levere skattemelding?</summary>
+        <p>Fristen for å levere skattemelding er 30. april for vanlige lønnstakere. For næringsdrivende er fristen 31. mai.</p>
+      </details>
+      <details>
+        <summary>Kan jeg endre skattemeldingen etter innsending?</summary>
+        <p>Ja, du kan endre skattemeldingen innen tre uker etter at skatteoppgjøret er tilgjengelig.</p>
+      </details>
+    </div>
+
+    <div class='faq-gruppe' data-kategori='fradrag'>
+      <h3>💰 Fradrag</h3>
+      <details>
+        <summary>Hvilke fradrag kan jeg få?</summary>
+        <p>Vanlige fradrag inkluderer minstefradrag, reisefradrag, fagforeningskontingent, og gaver til frivillige organisasjoner.</p>
+      </details>
+      <details>
+        <summary>Hvordan søker jeg om fradrag?</summary>
+        <p>Gå til vår tjenesteside og fyll ut fradragsskjemaet. Du trenger dokumentasjon for de fleste typer fradrag.</p>
+      </details>
+      <details>
+        <summary>Hva er minstefradrag?</summary>
+        <p>Minstefradrag er et automatisk fradrag i lønnsinntekt. Det er 46% av inntekten, minimum 4000 kr og maksimum 104 450 kr.</p>
+      </details>
+      <details>
+        <summary>Kan jeg få fradrag for hjemmekontor?</summary>
+        <p>Ja, hvis du jobber hjemmefra kan du få fradrag for hjemmekontor under visse betingelser.</p>
+      </details>
+    </div>
+
+    <div class='faq-gruppe' data-kategori='frister'>
+      <h3>⏰ Frister</h3>
+      <details>
+        <summary>Hva skjer hvis jeg leverer for sent?</summary>
+        <p>Ved forsinket levering kan det bli ilagt forsinkelsesgebyr på 1/1000 av beregnet skatt per dag, minimum 200 kr og maksimum 10 000 kr.</p>
+      </details>
+      <details>
+        <summary>Kan jeg få utsatt frist?</summary>
+        <p>Ja, i spesielle tilfeller kan du søke om utsatt frist. Kontakt oss for mer informasjon.</p>
+      </details>
+    </div>
+
+    <div class='faq-gruppe' data-kategori='teknisk'>
+      <h3>💻 Tekniske spørsmål</h3>
+      <details>
+        <summary>Hvordan kontakter jeg Skatteetaten?</summary>
+        <p>Du kan bruke kontaktskjemaet på vår kontaktside, ringe skattetelefonen på 800 80 000, eller sende e-post til post@skatteetaten.no.</p>
+      </details>
+      <details>
+        <summary>Jeg får ikke logget inn, hva gjør jeg?</summary>
+        <p>Sjekk at du bruker BankID eller annen godkjent innloggingsmetode. Hvis problemet vedvarer, kontakt teknisk support.</p>
+      </details>
+      <details>
+        <summary>Er nettsiden sikker?</summary>
+        <p>Ja, vår nettside bruker SSL-kryptering og alle data behandles i henhold til GDPR.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class='faq-hjelp'>
+    <h2>Fant du ikke svaret?</h2>
+    <p>Hvis du ikke finner svaret på ditt spørsmål her, kan du:</p>
+    <ul>
+      <li><a href='contact.html'>Kontakte oss direkte</a></li>
+      <li>Ringe skattetelefonen: 800 80 000</li>
+      <li>Besøke nærmeste skattekontor</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 Skatteetaten - Alle rettigheter reservert</p>
+</footer>
+<script src='script.js'></script>
+</body>
+</html>

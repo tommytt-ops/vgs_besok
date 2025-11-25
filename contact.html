@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Kontakt oss - Skatteetaten</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<header>
+  <h1>Kontakt Skatteetaten</h1>
+  <nav>
+    <a href='index.html'>Hjem</a>
+    <a href='services.html'>Tjenester</a>
+    <a href='contact.html'>Kontakt</a>
+    <a href='faq.html'>FAQ</a>
+  </nav>
+  <div id='klokke' class='header-clock'></div>
+</header>
+<main>
+  <section class='kontakt-info-seksjon'>
+    <h2>Kontaktinformasjon</h2>
+    <div class='info-grid'>
+      <div class='info-boks'>
+        <h3>📞 Telefon</h3>
+        <p>Skattetelefonen: 800 80 000</p>
+        <p>Åpningstid: 09:00 - 15:00</p>
+      </div>
+      <div class='info-boks'>
+        <h3>📧 E-post</h3>
+        <p>post@skatteetaten.no</p>
+        <p>Svartid: 1-3 virkedager</p>
+      </div>
+      <div class='info-boks'>
+        <h3>📍 Besøksadresse</h3>
+        <p>Skatteetaten Hovedkontor</p>
+        <p>Postboks 9200 Grønland, 0134 Oslo</p>
+      </div>
+    </div>
+  </section>
+
+  <section class='kontaktskjema-seksjon'>
+    <h2>Send oss en henvendelse</h2>
+    <form id='kontaktskjema' class='kontakt-form'>
+      <div class='form-gruppe'>
+        <label for='kontaktNavn'>Fullt navn: *</label>
+        <input type='text' id='kontaktNavn' name='navn' required>
+      </div>
+
+      <div class='form-gruppe'>
+        <label for='kontaktEpost'>E-postadresse: *</label>
+        <input type='email' id='kontaktEpost' name='epost' required>
+      </div>
+
+      <div class='form-gruppe'>
+        <label for='kontaktTelefon'>Telefonnummer:</label>
+        <input type='tel' id='kontaktTelefon' name='telefon' placeholder='12345678'>
+      </div>
+
+      <div class='form-gruppe'>
+        <label for='kontaktEmne'>Emne: *</label>
+        <select id='kontaktEmne' name='emne' required>
+          <option value=''>Velg emne</option>
+          <option value='skattemelding'>Spørsmål om skattemelding</option>
+          <option value='fradrag'>Spørsmål om fradrag</option>
+          <option value='klage'>Klage på vedtak</option>
+          <option value='generelt'>Generell henvendelse</option>
+          <option value='teknisk'>Teknisk support</option>
+        </select>
+      </div>
+
+      <div class='form-gruppe'>
+        <label for='kontaktMelding'>Din melding: *</label>
+        <textarea id='kontaktMelding' name='melding' rows='6' required></textarea>
+        <small id='tegnTeller'>0/500 tegn</small>
+      </div>
+
+      <div class='form-gruppe'>
+        <label>
+          <input type='checkbox' id='personvern' required>
+          Jeg har lest og godtar <a href='#'>personvernerklæringen</a> *
+        </label>
+      </div>
+
+      <button type='submit' class='beregn-knapp'>Send melding</button>
+      <button type='reset' class='nullstill-knapp'>Nullstill skjema</button>
+    </form>
+    <div id='skjemaMelding' class='status-melding'></div>
+  </section>
+
+  <section class='kart-seksjon'>
+    <h2>Finn oss</h2>
+    <div class='kart-placeholder'>
+      <p>🗺️ Her ville det vært et interaktivt kart (ikke en feil, bare altfor komplisert til å begynne å styre med i javascript på kort tid :) )</p>
+      <p>Skatteetaten Hovedkontor, Oslo</p>
+    </div>
+  </section>
+
+  <section class='ofte-spurte-seksjon'>
+    <h2>Ofte stilte spørsmål før kontakt</h2>
+    <p>Sjekk om svaret ditt finnes i vår <a href='faq.html'>FAQ-side</a> før du kontakter oss.</p>
+    <div class='hurtiglenker'>
+      <button class='hurtiglenke-knapp' data-emne='skattemelding'>Skattemelding</button>
+      <button class='hurtiglenke-knapp' data-emne='fradrag'>Fradrag</button>
+      <button class='hurtiglenke-knapp' data-emne='frister'>Frister</button>
+      <button class='hurtiglenke-knapp' data-emne='innlogging'>Innlogging</button>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 Skatteetaten - Alle rettigheter reservert</p>
+</footer>
+<script src='script.js'></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Skatteetaten - Hjem</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<header>
+  <h1>Velkommen til Skatteetaten</h1>
+  <nav>
+    <a href='index.html'>Hjem</a>
+    <a href='services.html'>Tjenester</a>
+    <a href='contact.html'>Kontakt</a>
+    <a href='faq.html'>FAQ</a>
+  </nav>
+  <div id='klokke' class='header-clock'></div>
+</header>
+<main>
+  <section class='skatt-kalkulator'>
+    <h2>Avansert Skattekalkulator</h2>
+    <div class='kalkulator-form'>
+      <label for='inntektInput'>Årsinntekt (NOK):</label>
+      <input type='number' id='inntektInput' placeholder='Din inntekt'>
+
+      <label for='alderInput'>Din alder:</label>
+      <input type='number' id='alderInput' placeholder='Alder'>
+
+      <label for='skatteKlasse'>Skatteklasse:</label>
+      <select id='skatteKlasse'>
+        <option value='klasse1'>Klasse 1</option>
+        <option value='klasse2'>Klasse 2 (gift/samboer)</option>
+      </select>
+
+      <label>
+        <input type='checkbox' id='medlemKirken'>
+        Medlem av Den norske kirke
+      </label>
+
+      <button id='beregnSkattKnapp' class='beregn-knapp'>Beregn Skatt</button>
+      <button id='nullstillKnapp' class='nullstill-knapp'>Nullstill</button>
+    </div>
+    <div id='skattResultat' class='resultat-boks'></div>
+    <div id='skatteDetaljer' class='detaljer-boks'></div>
+  </section>
+
+  <section class='statistikk-seksjon'>
+    <h2>Skattestatistikk 2024</h2>
+    <div id='statistikkGraf' class='graf-container'>
+      <canvas id='skatteGraf' width='400' height='200'></canvas>
+    </div>
+    <button id='oppdaterStatistikk'>Oppdater Statistikk</button>
+  </section>
+
+  <section class='sok-seksjon'>
+    <h2>Søk i Skatteregler</h2>
+    <input type='text' id='sokInput' placeholder='Søk etter regel...'>
+    <button id='sokKnapp'>Søk</button>
+    <table id='regelTabell' class='skatte-tabell'>
+      <thead>
+      <tr>
+        <th>Regel ID</th>
+        <th>Navn</th>
+        <th>Beskrivelse</th>
+        <th>Handling</th>
+      </tr>
+      </thead>
+      <tbody id='regelTabellKropp'>
+      <tr data-kategori='fradrag'>
+        <td>R001</td>
+        <td>Fradrag</td>
+        <td>Mulighet for fradrag på reiseutgifter</td>
+        <td><button class='info-knapp' data-regel='R001'>Info</button></td>
+      </tr>
+      <tr data-kategori='mva'>
+        <td>R002</td>
+        <td>MVA</td>
+        <td>Merverdiavgift på varer og tjenester</td>
+        <td><button class='info-knapp' data-regel='R002'>Info</button></td>
+      </tr>
+      <tr data-kategori='sats'>
+        <td>R003</td>
+        <td>Skattesats</td>
+        <td>Standard sats 22%</td>
+        <td><button class='info-knapp' data-regel='R003'>Info</button></td>
+      </tr>
+      <tr data-kategori='fradrag'>
+        <td>R004</td>
+        <td>Minstefradrag</td>
+        <td>Automatisk fradrag i lønnsinntekt</td>
+        <td><button class='info-knapp' data-regel='R004'>Info</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class='nyheter-seksjon'>
+    <h2>Siste Nyheter</h2>
+    <div id='nyheterListe' class='nyheter-container'>
+      <article class='nyhet-kort'>
+        <h3>Nye skatteregler for 2025</h3>
+        <p class='dato'>20. november 2024</p>
+        <p>Endringer i fradragsregler trer i kraft fra nyttår...</p>
+        <button class='les-mer' data-nyhet='1'>Les mer</button>
+      </article>
+      <article class='nyhet-kort'>
+        <h3>Digital skattemelding forenklet</h3>
+        <p class='dato'>15. november 2024</p>
+        <p>Ny og enklere versjon av skattemeldingen er lansert...</p>
+        <button class='les-mer' data-nyhet='2'>Les mer</button>
+      </article>
+    </div>
+  </section>
+
+  <section class='tilbakemelding-seksjon'>
+    <h2>Gi oss tilbakemelding</h2>
+    <div class='stjerne-rating'>
+      <span class='stjerne' data-verdi='1'>★</span>
+      <span class='stjerne' data-verdi='2'>★</span>
+      <span class='stjerne' data-verdi='3'>★</span>
+      <span class='stjerne' data-verdi='4'>★</span>
+      <span class='stjerne' data-verdi='5'>★</span>
+    </div>
+    <p id='ratingTekst'></p>
+  </section>
+
+  <button id='apneModal' class='viktig-info-knapp'>📢 Vis Viktig Info</button>
+
+  <div id='infoModal' class='modal'>
+    <div class='modal-innhold'>
+      <span id='lukkModal' class='lukk-knapp'>&times;</span>
+      <h2>Viktig melding fra Skatteetaten</h2>
+      <p>Husk fristen for skattemelding er 30. april!</p>
+      <button id='ikkvisIgjen'>Ikke vis denne meldingen igjen</button>
+    </div>
+  </div>
+
+  <div id='regelModal' class='modal'>
+    <div class='modal-innhold'>
+      <span class='lukk-modal'>&times;</span>
+      <div id='regelDetaljer'></div>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2024 Skatteetaten - Alle rettigheter reservert</p>
+  <p>Besøksteller: <span id='besoksTeller'>0</span></p>
+</footer>
+<script src='script.js'></script>
+</body>
+</html>
