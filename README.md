@@ -87,7 +87,7 @@ Ran 12 tests: 5 passed, 7 failed, 0 errors
    - Input: En tekststreng
    - Output: Antall vokaler (a, e, i, o, u)
 
-### OppgaveB - Avanserte funksjoner
+### OppgaveB - Mer vanserte funksjoner
 
 1. **oppgave1(list)** - Reverser liste
    - Input: En liste med tall
@@ -104,9 +104,11 @@ Ran 12 tests: 5 passed, 7 failed, 0 errors
 4. **oppgave4(string)** - Sjekk palindrom
    - Input: En tekststreng
    - Output: True hvis palindrom, False ellers
+   - Ekstra info om palindromer: [https://no.wikipedia.org/wiki/Palindrom](https://no.wikipedia.org/wiki/Palindrom)
 
 5. **oppgave5(number)** - Fibonacci-sekvens
    - Input: Et heltall (posisjon i sekvensen)
    - Output: Verdien på den posisjonen i Fibonacci-sekvensen
+   - Ekstra info om Fibonacci-sekvensen: [https://www.matematikk.org/artikkel.html?tid=63111](https://www.matematikk.org/artikkel.html?tid=63111)
 
 Lykke til! 🎯
