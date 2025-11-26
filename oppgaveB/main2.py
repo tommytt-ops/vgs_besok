@@ -7,7 +7,7 @@ def oppgave2(list):
     pass
 
 #Ta inn en int og gjør det om til en string med komma mellom hver tredje siffer
-#Eksempeler input = 1000 output = "1,000", input 312455 = "312,455", input 1234567 = "1,234,567"
+#Eksempeler input = 1000 return "1,000", input 312455 return "312,455", input 1234567 return "1,234,567"
 def oppgave3(number):
     pass
 
