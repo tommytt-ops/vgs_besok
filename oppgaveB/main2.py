@@ -19,8 +19,3 @@ def oppgave4(string):
 # Eksempel input = 9, return 34
 def oppgave5(number):
     pass
-
-
-
-
-

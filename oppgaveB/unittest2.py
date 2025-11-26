@@ -2,51 +2,51 @@ import unittest
 import main2 as func
 
 class TestOppgave1(unittest.TestCase):
-    def test_basic(self):
+    def test_basic_oppgave1(self):
         result = func.oppgave1([1, 2, 3, 4, 5])
         self.assertEqual(result, [5, 4, 3, 2, 1], '')
     
-    def test_empty(self):
+    def test_empty_oppgave1(self):
         result = func.oppgave1([])
         self.assertEqual(result, [], '')
 
 
 class TestOppgave2(unittest.TestCase):
-    def test_basic(self):
+    def test_basic_oppgave2(self):
         result = func.oppgave2([6, 2, 1])
         self.assertEqual(result, [1, 2, 6], '')
     
-    def test_empty(self):
+    def test_empty_oppgave2(self):
         result = func.oppgave2([])
         self.assertEqual(result, [], '')
 
 
 class TestOppgave3(unittest.TestCase):
-    def test_basic1(self):
+    def test_basic1_oppgave3(self):
         result = func.oppgave3(1000)
         self.assertEqual(result, "1,000", '')
     
-    def test_basic2(self):
+    def test_basic2_oppgave3(self):
         result = func.oppgave3(1234567)
         self.assertEqual(result, "1,234,567", '')
 
 
 class TestOppgave4(unittest.TestCase):
-    def test_basic_false1(self):
+    def test_basic_false_oppgave4(self):
         result = func.oppgave4("hello")
         self.assertEqual(result, False, '')
     
-    def test_basic_true1(self):
+    def test_basic_true_oppgave4(self):
         result = func.oppgave4("ada")
         self.assertEqual(result, True, '')
 
 
 class TestOppgave5(unittest.TestCase):
-    def test_count_vowels(self):
+    def test_basic_oppgave5(self):
         result = func.oppgave5(9)
         self.assertEqual(result, 34, '')
     
-    def test_count_vowels_no_vowels(self):
+    def test_zero_oppgave5(self):
         result = func.oppgave5(0)
         self.assertEqual(result, 0, '')
 

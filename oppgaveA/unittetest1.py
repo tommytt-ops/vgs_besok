@@ -2,59 +2,59 @@ import unittest
 import main1 as func
 
 class TestOppgave1(unittest.TestCase):
-    def test_addition(self):
+    def test_plus_oppgave1(self):
         result = func.oppgave1(1, "+", 1)
         self.assertEqual(result, 2, '')
     
-    def test_subtraction(self):
+    def test_minus_oppgave1(self):
         result = func.oppgave1(5, "-", 3)
         self.assertEqual(result, 2, '')
     
-    def test_multiplication(self):
+    def test_gange_oppgave1(self):
         result = func.oppgave1(4, "*", 3)
         self.assertEqual(result, 12, '')
     
-    def test_division(self):
+    def test_divisjon_oppgave1(self):
         result = func.oppgave1(10, "/", 2)
         self.assertEqual(result, 5, '')
 
 
 class TestOppgave2(unittest.TestCase):
-    def test_even_number(self):
+    def test_partall_oppgave2(self):
         result = func.oppgave2(4)
         self.assertEqual(result, True, '')
     
-    def test_odd_number(self):
+    def test_oddetall_oppgave2(self):
         result = func.oppgave2(3)
         self.assertEqual(result, False, '')
 
 
 class TestOppgave3(unittest.TestCase):
-    def test_reverse_string(self):
+    def test_reverse_string_oppgave3(self):
         result = func.oppgave3("hello")
         self.assertEqual(result, "olleh", '')
     
-    def test_reverse_empty_string(self):
+    def test_reverse_empty_string_oppgave3(self):
         result = func.oppgave3("")
         self.assertEqual(result, "", '')
 
 
 class TestOppgave4(unittest.TestCase):
-    def test_largest_number(self):
+    def test_største_nummer_oppgave4(self):
         result = func.oppgave4([3, 7, 2, 9, 1])
         self.assertEqual(result, 9, '')
     
-    def test_single_number(self):
+    def test_enkel_tall_oppgave4(self):
         result = func.oppgave4([5])
         self.assertEqual(result, 5, '')
 
 
 class TestOppgave5(unittest.TestCase):
-    def test_count_vowels(self):
+    def test_antall_vokaler_oppgave5(self):
         result = func.oppgave5("hello")
         self.assertEqual(result, 2, '')
     
-    def test_count_vowels_no_vowels(self):
+    def test_mull_vokaler_oppgave5(self):
         result = func.oppgave5("xyz")
         self.assertEqual(result, 0, '')
 
