@@ -87,7 +87,7 @@ Ran 12 tests: 5 passed, 7 failed, 0 errors
    - Input: En tekststreng
    - Output: Antall vokaler (a, e, i, o, u)
 
-### OppgaveB - Mer vanserte funksjoner
+### OppgaveB - Litt mer vanserte funksjoner
 
 1. **oppgave1(list)** - Reverser liste
    - Input: En liste med tall
