@@ -59,7 +59,10 @@ class TestOppgave5(unittest.TestCase):
         self.assertEqual(result, 0, '')
 
 if __name__ == '__main__':
+    
     import sys
+    GREEN = "\033[92m"
+    RED = "\033[91m"
     loader = unittest.TestLoader()
     suite = loader.loadTestsFromModule(sys.modules[__name__])
     
@@ -75,16 +78,16 @@ if __name__ == '__main__':
                 result = unittest.TestResult()
                 case.run(result)
                 if result.wasSuccessful():
-                    print(f"✓ {test_name}")
+                    print(f"{GREEN}✓ {test_name}")
                     passed += 1
                 elif result.failures:
-                    print(f"✗ {test_name}")
+                    print(f"{RED}✗ {test_name}")
                     failed += 1
                 elif result.errors:
-                    print(f"✗ {test_name}")
+                    print(f"{RED}✗ {test_name}")
                     errors += 1
             except Exception:
-                print(f"✗ {test_name}")
+                print(f"{RED}✗ {test_name}")
                 errors += 1
     
     print(f"\nRan {passed + failed + errors} tests: {passed} passed, {failed} failed, {errors} errors")
