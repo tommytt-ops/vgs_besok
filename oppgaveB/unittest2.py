@@ -1,61 +1,53 @@
 import unittest
-import main as func
+import main2 as func
 
 class TestOppgave1(unittest.TestCase):
-    def test_addition(self):
-        result = func.oppgave1(1, "+", 1)
-        self.assertEqual(result, 2, '')
+    def test_basic(self):
+        result = func.oppgave1([1, 2, 3, 4, 5])
+        self.assertEqual(result, [5, 4, 3, 2, 1], '')
     
-    def test_subtraction(self):
-        result = func.oppgave1(5, "-", 3)
-        self.assertEqual(result, 2, '')
-    
-    def test_multiplication(self):
-        result = func.oppgave1(4, "*", 3)
-        self.assertEqual(result, 12, '')
-    
-    def test_division(self):
-        result = func.oppgave1(10, "/", 2)
-        self.assertEqual(result, 5, '')
+    def test_empty(self):
+        result = func.oppgave1([])
+        self.assertEqual(result, [], '')
 
 
 class TestOppgave2(unittest.TestCase):
-    def test_even_number(self):
-        result = func.oppgave2(4)
-        self.assertEqual(result, True, '')
+    def test_basic(self):
+        result = func.oppgave2([6, 2, 1])
+        self.assertEqual(result, [1, 2, 6], '')
     
-    def test_odd_number(self):
-        result = func.oppgave2(3)
-        self.assertEqual(result, False, '')
+    def test_empty(self):
+        result = func.oppgave2([])
+        self.assertEqual(result, [], '')
 
 
 class TestOppgave3(unittest.TestCase):
-    def test_reverse_string(self):
-        result = func.oppgave3("hello")
-        self.assertEqual(result, "olleh", '')
+    def test_basic1(self):
+        result = func.oppgave3(1000)
+        self.assertEqual(result, "1,000", '')
     
-    def test_reverse_empty_string(self):
-        result = func.oppgave3("")
-        self.assertEqual(result, "", '')
+    def test_basic2(self):
+        result = func.oppgave3(1234567)
+        self.assertEqual(result, "1,234,567", '')
 
 
 class TestOppgave4(unittest.TestCase):
-    def test_largest_number(self):
-        result = func.oppgave4([3, 7, 2, 9, 1])
-        self.assertEqual(result, 9, '')
+    def test_basic_false1(self):
+        result = func.oppgave4("hello")
+        self.assertEqual(result, False, '')
     
-    def test_single_number(self):
-        result = func.oppgave4([5])
-        self.assertEqual(result, 5, '')
+    def test_basic_true1(self):
+        result = func.oppgave4("ada")
+        self.assertEqual(result, True, '')
 
 
 class TestOppgave5(unittest.TestCase):
     def test_count_vowels(self):
-        result = func.oppgave5("hello")
-        self.assertEqual(result, 2, '')
+        result = func.oppgave5(9)
+        self.assertEqual(result, 34, '')
     
     def test_count_vowels_no_vowels(self):
-        result = func.oppgave5("xyz")
+        result = func.oppgave5(0)
         self.assertEqual(result, 0, '')
 
 if __name__ == '__main__':
@@ -92,4 +84,3 @@ if __name__ == '__main__':
     
     print(f"\nRan {passed + failed + errors} tests: {passed} passed, {failed} failed, {errors} errors")
     sys.exit(0 if (failed + errors) == 0 else 1)
-
