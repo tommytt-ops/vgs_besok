@@ -3,6 +3,7 @@
 ## 📋 Oppgaver oversikt
 
 Dette repositoriet inneholder Python-oppgaver som skal løses ved å implementere funksjoner i `main`-filene. Hver oppgave har tilhørende enhetstester som du kan bruke for å verifisere at implementasjonen din er korrekt.
+**NB Prøv og ikke bruke AI eller ferdig funskjoner i Python**
 
 ## 🎯 Ditt oppdrag
 
